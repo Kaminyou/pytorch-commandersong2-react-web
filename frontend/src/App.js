@@ -19,7 +19,7 @@ console.log(configData.SERVER_URL)
 
 function App() {
 
-  const [level, setLevel] = useState("quest");
+  const [level, setLevel] = useState("guest");
   const [account, setAccount] = useState("");
   const [password, setPassword] = useState("");
   const [remain, setRemain] = useState(0);
