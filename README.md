@@ -10,6 +10,12 @@ The frontend is mainly based on naive `React` and easily to be built up. You mus
     "SERVER_URL": "backend server url"
 }
 ```
+If you setup everything in one server, you can set
+```json
+{
+    "SERVER_URL": "http://127.0.0.1:5002/"
+}
+```
 Then, install all dependencies
 ```script
 cd frontend
