@@ -21,6 +21,46 @@ yarn start
 ```
 ## Setup backend
 The backend is mainly based on `flask`. To run the backend server, you must first setup several dependencies! Please refer to this [link](https://github.com/Kaminyou/deepspeech2-pytorch-adversarial-attack) to install `deepspeech.pytorch` first. Also, it is recommended to run this project on Anaconda environment with PyTorch installation. Besides, you **MUST have GPU** on your server to make sure all the process would run appropriately.</br>
+0. Prepare Pytorch and Anaconda environment
+1. STEP 1: Install deepspeech environment (please do these steps in root path). That's, make the structure like:
+```
+this_repo/
+├── frontend/
+│   └──...
+├── backend/
+│   ├──server.py
+│   └──...
+├──deepspeech.pytorch/
+│   ├──models/
+│   │   └──librispeech/
+│   │       └──librispeech_pretrained_v2.pth
+│   └──...
+```
+Please run the following code to setup the backend environment
+```script
+git clone https://github.com/SeanNaren/warp-ctc.git
+cd warp-ctc; mkdir build; cd build; cmake ..; make
+export CUDA_HOME="/usr/local/cuda"
+cd ../pytorch_binding && python setup.py install
+
+git clone --recursive https://github.com/NVIDIA/apex.git
+cd apex && pip install .
+
+git clone --recursive https://github.com/parlance/ctcdecode.git
+cd ctcdecode && pip install .
+
+git clone https://github.com/SeanNaren/deepspeech.pytorch.git
+cd deepspeech.pytorch
+pip install -r requirements.txt
+```
+2. Download the pretrained model
+```
+cd deepspeech.pytorch
+mkdir models
+cd models
+mkdir librispeech
+wget -O librispeech_pretrained_v2.pth https://github.com/SeanNaren/deepspeech.pytorch/releases/download/v2.0/librispeech_pretrained_v2.pth
+```
 Afterward, two secret files should be created.
 1. backend/args.py
 ```python
