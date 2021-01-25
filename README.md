@@ -65,6 +65,7 @@ cd deepspeech.pytorch
 mkdir models
 cd models
 mkdir librispeech
+cd librispeech
 wget -O librispeech_pretrained_v2.pth https://github.com/SeanNaren/deepspeech.pytorch/releases/download/v2.0/librispeech_pretrained_v2.pth
 ```
 Afterward, two secret files should be created.
