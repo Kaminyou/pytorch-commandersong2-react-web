@@ -1,4 +1,5 @@
 # PyTorch Commander Song 2 React Web Service
+A web server for adversarial attack against DeepSpeech2 ASR pytorch model
 ![alt text](./img/index.png)
 ## Introduction
 This repo provide a web service for adversarial sound examples generation against deep speech 2 ASR model. For more attacking technigue information, please refer to this [link](https://github.com/Kaminyou/deepspeech2-pytorch-adversarial-attack), which mainly focuses on how to use PyTorch to generate adversarial examples.
